@@ -22,8 +22,7 @@ export default class App {
 
     public createDBConnection() {
         const mongoURI : string = process.env.MONGODB_URI as string ;
-        mongoose.connect(mongoURI,
-            {
+        mongoose.connect(mongoURI,{
                 useNewUrlParser: true,
                 useUnifiedTopology: true,
                 useFindAndModify: true,
