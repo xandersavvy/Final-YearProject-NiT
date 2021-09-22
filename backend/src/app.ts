@@ -20,20 +20,20 @@ export default class App {
         this.routes();
     }
 
-    public createDBConnection() {
-        const mongoURI : string = process.env.MONGODB_URI as string ;
-        mongoose.connect(mongoURI,{
-                useNewUrlParser: true,
-                useUnifiedTopology: true,
-                useFindAndModify: true,
-                useCreateIndex: true,
-                poolSize: Number(process.env.MONGODB_POOLSIZE),
-                keepAlive: true,
-            });
-    }
+    // public createDBConnection() {
+    //     const mongoURI : string = process.env.MONGODB_URI as string ;
+    //     mongoose.connect(mongoURI,{
+    //             useNewUrlParser: true,
+    //             useUnifiedTopology: true,
+    //             useFindAndModify: true,
+    //             useCreateIndex: true,
+    //             poolSize: Number(process.env.MONGODB_POOLSIZE),
+    //             keepAlive: true,
+    //         });
+    // }
 
     public listen() {
-        this.createDBConnection();
+        // this.createDBConnection();
         this.app.listen(process.env.PORT, () => {
             console.log(`App listening on the port ${process.env.PORT}`);
         });
@@ -70,8 +70,8 @@ export default class App {
         this.app.get('/', (req: Request, res: Response, next: NextFunction) => {
             res.send('Senhigans Backend');
         });
-        this.app.use('/api/v1', this.apiV1Routes);
-        this.apiV1Routes.use('/user', ); //enterroutes
+        // this.app.use('/api/v1', this.apiV1Routes);
+        // this.apiV1Routes.use('/user', ); //enterroutes
     }
 }
 
