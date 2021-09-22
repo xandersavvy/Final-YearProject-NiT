@@ -9,6 +9,7 @@ require('dotenv').config();
 class App {
     public app: express.Application;
     public apiV1Routes: express.Router;
+    
 
     constructor() {
         this.app = express();
@@ -20,7 +21,8 @@ class App {
     }
 
     public createDBConnection() {
-        mongoose.connect(process.env.MONGODB_URI,
+        const mongoURI : string = process.env.MONGODB_URI as string ;
+        mongoose.connect(mongoURI,
             {
                 useNewUrlParser: true,
                 useUnifiedTopology: true,
