@@ -1,6 +1,8 @@
 // Importing module
 import express from 'express';
-  
+const dotenv = require('dotenv').config();  
+import cors from 'cors';
+
 const app = express();
 const PORT:Number=3000;
   
