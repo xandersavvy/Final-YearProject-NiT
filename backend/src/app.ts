@@ -1,12 +1,12 @@
-import bodyParser from 'body-parser';
-import cookieParser from 'cookie-parser';
-import cors from 'cors';
-import logger from 'morgan';
+import bodyParser = require('body-parser');
+import cookieParser = require('cookie-parser');
+import cors = require('cors');
+import logger = require('morgan');
 import mongoose from 'mongoose';
-import express, { NextFunction, Response, Request } from 'express';
+import express = require('express');
+import  { NextFunction, Response, Request } from 'express';
 require('dotenv').config();
-
-class App {
+export default class App {
     public app: express.Application;
     public apiV1Routes: express.Router;
     
@@ -75,3 +75,4 @@ class App {
         this.apiV1Routes.use('/user', ); //enterroutes
     }
 }
+
