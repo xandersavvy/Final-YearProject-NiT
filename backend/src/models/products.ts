@@ -1,4 +1,4 @@
-import mongoose , { Model,Schema } from "mongoose";
+import  { model,Model,Schema } from "mongoose";
 import { productsInterface } from "../interfaces"; 
 
 const ProductSchema = new Schema({
@@ -36,7 +36,7 @@ const ProductSchema = new Schema({
     }
 })
 
-const Products : Model<productsInterface | any> = mongoose.model('products',ProductSchema);
+const Products : Model<productsInterface | any> = model('products',ProductSchema);
 
 export {
     Products
