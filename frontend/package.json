@@ -9,8 +9,11 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "astro": "^0.20.12",
     "@astrojs/renderer-react": "^0.2.2",
-    "@astrojs/renderer-svelte": "^0.1.2"
+    "@astrojs/renderer-svelte": "^0.1.2",
+    "astro": "^0.20.12"
+  },
+  "dependencies": {
+    "bootstrap": "^5.1.3"
   }
 }

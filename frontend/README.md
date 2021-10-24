@@ -1,3 +1,17 @@
+### Styling - Bootstrap
+### Astro rendered - Svelte, react
+### Don't write anything except .astro in pages/ and write everythhing else where just import this there
+### every js  resides between two --- in astro so make sure to include it and then just import it .
+
+# Example 
+```
+---
+import Hello from '../components/Hello.jsx'
+---
+<Hello />
+```
+Auto generated  Readme down below - 
+
 # Welcome to [Astro](https://astro.build)
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/snowpackjs/astro/tree/latest/examples/starter)
