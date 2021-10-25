@@ -1,13 +1,15 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import { DrawerMenu } from '../components/Drawer'
+import type { NextPage } from "next";
+import Head from "next/head";
+import { DrawerMenu } from "../components/Drawer";
+import Navbar from "../components/Navbar";
 
 const Home: NextPage = () => {
   return (
-    <div >
+    <div>
+      <Navbar />
       <DrawerMenu />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
