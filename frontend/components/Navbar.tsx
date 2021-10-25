@@ -1,10 +1,11 @@
 import { Box, Divider, Flex, Heading, Link } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import React from "react";
-import { useAuth } from "../lib/auth";
+// import { useAuth } from "../lib/auth";
 
 const Navbar: React.FC<{}> = () => {
-  const { auth, signOut } = useAuth();
+  // const { auth, signOut } = useAuth();
+  const auth = true;
   const router = useRouter();
 
   return (
@@ -25,7 +26,8 @@ const Navbar: React.FC<{}> = () => {
               >
                 Add new quiz
               </Link>
-              <Link p={2} onClick={() => signOut()}>
+              <Link p={2} // onClick= {() => signOut()}
+              >
                 Logout
               </Link>
             </Box>

@@ -1,17 +1,17 @@
 import { Button, Center, Container, Heading, VStack } from "@chakra-ui/react";
-import { useRouter } from "next/router";
+// import { useRouter } from "next/router";
 import React from "react";
 import { FcGoogle } from "react-icons/fc";
 import Navbar from "../components/Navbar";
-import { useAuth } from "../lib/auth";
+// import { useAuth } from "../lib/auth";
 
 const signin = () => {
-  const { auth, siginWithGoogle } = useAuth();
-  const router = useRouter();
+  // const { auth, siginWithGoogle } = useAuth();
+  // const router = useRouter();
 
-  if (auth) {
-    router.push((router.query.next as string) || "/");
-  }
+  // if (auth) {
+  //   router.push((router.query.next as string) || "/");
+  // }
 
   return (
     <>
@@ -22,7 +22,8 @@ const signin = () => {
             <Heading fontSize="3xl" mb={2}>
               Hello, Welcome to the Quiz App!!
             </Heading>
-            <Button leftIcon={<FcGoogle />} onClick={() => siginWithGoogle()}>
+            <Button leftIcon={<FcGoogle />} //onClick={() => siginWithGoogle()}
+            >
               Sign In with Google
             </Button>
           </VStack>

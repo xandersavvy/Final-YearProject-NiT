@@ -1,5 +1,3 @@
-import {Menu,MenuList,MenuItem} from '@chakra-ui/react'
-
 export const Menus = () =>{
   return (
    <>
