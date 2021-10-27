@@ -11,7 +11,7 @@ import {
  
 } from "@chakra-ui/react"
 import {useRef} from 'react';
-import { Menus } from "./Menu";
+import { Menus } from "./utils/Menu";
 
 export const DrawerMenu = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()

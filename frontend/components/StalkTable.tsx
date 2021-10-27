@@ -4,18 +4,9 @@ import {
   Tbody,
   Tr,
   Th,
-  Td,
-  Button,
-  Popover,
-  PopoverTrigger,
-  PopoverContent,
-  PopoverHeader,
-  PopoverBody,
-  PopoverFooter,
-  PopoverArrow,
-  PopoverCloseButton,
-} from "@chakra-ui/react"
-import { FcFullTrash } from "react-icons/fc"
+  Td } from "@chakra-ui/react"
+import DeleteButton from "./utils/DeleteButton"
+
 
 
 
@@ -80,17 +71,7 @@ const StalkTable = () => {
                                       <Td isNumeric>{item.bp}</Td>
                                       <Td isNumeric>{item.count}</Td>
                                       <Td>
-                                      <Popover>
-                                        <PopoverTrigger>
-                                              <Button><FcFullTrash /></Button>
-                                        </PopoverTrigger>
-                                        <PopoverContent>
-                                        <PopoverArrow />
-                                        <PopoverCloseButton />
-                                        <PopoverHeader>Confirmation!</PopoverHeader>
-                                        <PopoverBody>Are you sure you want to delete {item.code}?</PopoverBody>
-                                        </PopoverContent>
-                                      </Popover>
+                                      <DeleteButton code={item.code} />
                                       </Td>
                                       </Tr>
            )}

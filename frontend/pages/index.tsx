@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import { DrawerMenu } from "../components/Drawer";
-import Navbar from "../components/Navbar";
-import StalkTable from "../components/utils/StalkTable";
+import Navbar from "../components/utils/Navbar";
+import StalkTable from "../components/StalkTable";
 
 const Home: NextPage = () => {
   return (
