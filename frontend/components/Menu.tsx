@@ -15,18 +15,6 @@ export const Menus = () =>{
      {navItems.map((navItem,key) => <Button colorScheme="blue" key={key}
                                       variant ="ghost" isFullWidth
                                       onClick={()=>router.push(navItem[0])}>{navItem[1]}</Button>)}
-            {/* <Button colorScheme="blue" 
-             variant ="ghost" 
-             isFullWidth = {true}
-            onclick={()=>router.push('/')}> Product Stalk Information </Button>
-            <Button colorScheme="blue"
-             variant ="ghost" 
-             isFullWidth = {true}
-            onclick={()=>router.push('/dealerInfo')}> Dealer Information </Button>
-            <Button colorScheme="blue"
-             variant ="ghost" 
-             isFullWidth = {true}
-            onclick={()=>router.push('/')}> Product Stalk Information </Button> */}
     </div>
   )
 }
