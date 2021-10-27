@@ -30,7 +30,7 @@ const AddModal = () => {
   return (
     <div style={modalStyle}>
       <Button onClick={onOpen} variant="ghost">
-        <FcAddImage />
+        <FcAddImage size={30}/>
       </Button>
 
       <Modal isOpen={isOpen} onClose={onClose}>
