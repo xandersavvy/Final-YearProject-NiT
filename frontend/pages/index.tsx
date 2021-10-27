@@ -1,17 +1,6 @@
 import type { NextPage } from "next";
-import Head from "next/head";
-import { DrawerMenu } from "../components/Drawer";
-import Navbar from "../components/utils/Navbar";
-import StalkTable from "../components/StalkTable";
+import ProductStalkPage from "../components/ProductStalkPage";
 
-const Home: NextPage = () => {
-  return (
-    <div>
-      <Navbar />
-      <DrawerMenu />
-      <StalkTable />
-    </div>
-  );
-};
+const Home: NextPage = () => <ProductStalkPage />
 
 export default Home;
