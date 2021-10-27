@@ -1,11 +1,32 @@
+import {Button} from '@chakra-ui/react'
+import router from 'next/router'
+import { Key } from 'react'
+
+
+const navItems = [
+  ["/","Product Stalk Info"],
+  ["/dealerInfo","Dealer Information"]
+]
+
 export const Menus = () =>{
+  navItems.map((navItem)=>console.log(navItem[0]))
   return (
-   <>
-            <li><button>P</button></li>
-            <li><button>R</button></li>
-            <li><button>A</button></li>
-            <li><button>T</button></li>
-            <li><button>I</button></li>
-    </>
+   <div>
+     {navItems.map((navItem,key) => <Button colorScheme="blue" key={key}
+                                      variant ="ghost" isFullWidth
+                                      onClick={()=>router.push(navItem[0])}>{navItem[1]}</Button>)}
+            {/* <Button colorScheme="blue" 
+             variant ="ghost" 
+             isFullWidth = {true}
+            onclick={()=>router.push('/')}> Product Stalk Information </Button>
+            <Button colorScheme="blue"
+             variant ="ghost" 
+             isFullWidth = {true}
+            onclick={()=>router.push('/dealerInfo')}> Dealer Information </Button>
+            <Button colorScheme="blue"
+             variant ="ghost" 
+             isFullWidth = {true}
+            onclick={()=>router.push('/')}> Product Stalk Information </Button> */}
+    </div>
   )
 }
