@@ -14,7 +14,7 @@ const Navbar = (props:navProps) => {
     <>
       <Head>
         <link rel="icon" href="https://image.freepik.com/free-vector/two-business-partners-handshaking_74855-6685.jpg" />
-        <title>{props.title}</title>
+        <title>{props.title}</title> 
       </Head>
       <Flex justify="space-between" m={4}>
         

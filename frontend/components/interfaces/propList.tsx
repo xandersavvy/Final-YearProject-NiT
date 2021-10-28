@@ -5,3 +5,7 @@ export interface ProductProps {
 export interface navProps {
  title : string;
 }
+
+export interface billModalProps {
+    Id: string;
+}

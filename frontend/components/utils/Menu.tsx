@@ -1,12 +1,14 @@
 import {Button} from '@chakra-ui/react'
 import router from 'next/router'
-import { Key } from 'react'
 
 
 const navItems = [
   ["/","Product Stalk Info"],
   ["/dealerInfo","Dealer Information"],
-  ["/empInfo","Employee Information"]
+  ["/empInfo","Employee Information"],
+  ["/return","Return Product"],
+  ["/bill","Invoice generator"]
+
 ]
 
 export const Menus = () =>{
