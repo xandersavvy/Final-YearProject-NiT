@@ -1,7 +1,6 @@
 import Head from "next/head";
 import { DrawerMenu } from "../Drawer";
 import Navbar from "../utils/Navbar";
-import StalkTable from "./StalkTable";
 import { useDisclosure } from "@chakra-ui/hooks";
 import { FcAddImage } from "react-icons/fc";
 import {
@@ -14,7 +13,8 @@ import {
   ModalCloseButton,
   Button
 } from "@chakra-ui/react";
-import { StalkForm } from "./ProductStalkForm";
+import { DealerInfoForm} from "./DealerInfoForm";
+import DealerInfoTable from "./DealerTable";
 
 
 const modalStyle = {
@@ -39,7 +39,7 @@ const AddModal = () => {
           <ModalHeader>Add Product Stalk</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-          <StalkForm />
+          <DealerInfoForm />
           </ModalBody>
 
           <ModalFooter>
@@ -55,16 +55,16 @@ const AddModal = () => {
   )
 }
 
-const ProductStalkPage = () => {
+const DealerInfoPage = () => {
   return (
     <div>
       <Navbar />
       <DrawerMenu />
       <AddModal />
-      <StalkTable />
+      <DealerInfoTable />
     </div>
   );
 };
 
-export default ProductStalkPage;
+export default DealerInfoPage;
 
