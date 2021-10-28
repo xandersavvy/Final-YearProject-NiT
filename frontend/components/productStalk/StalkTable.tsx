@@ -16,37 +16,43 @@ const items = [
     "batch":"ADTH7789",
     "code":"cs7894",
     "bp":900.00,
-    "count":90
+    "count":90,
+    "mrp": 1000.00,
   },{
     "dealerId":"ADTG90",
     "batch":"ADTH7789",
     "code":"cs7894",
     "bp":900.00,
-    "count":90
+    "count":90,
+    "mrp": 1000.00
   },{
     "dealerId":"ADTG90",
     "batch":"ADTH7789",
     "code":"cs7894",
     "bp":900.00,
-    "count":90
+    "count":90,
+    "mrp": 1000.00
   },{
     "dealerId":"ADTG90",
     "batch":"ADTH7789",
     "code":"cs7894",
     "bp":900.00,
-    "count":90
+    "count":90,
+    "mrp": 1000.00
   },{
     "dealerId":"ADTG90",
     "batch":"ADTH7789",
     "code":"cs7894",
     "bp":900.00,
-    "count":90
+    "count":90,
+    "mrp": 1000.00
   },{
     "dealerId":"ADTG90",
     "batch":"ADTH7789",
     "code":"cs7894",
     "bp":900.00,
-    "count":90
+    "count":90,
+    "mrp": 1000.00
   }
 ]
 
@@ -59,6 +65,7 @@ const StalkTable = () => {
               <Th>Product Batch</Th>
               <Th>Product Code</Th>
               <Th isNumeric>Buying Price</Th>
+              <Th isNumeric>MRP</Th>
               <Th isNumeric>Product Count</Th>
               <Th>Delete</Th>
           </Tr>
@@ -69,6 +76,7 @@ const StalkTable = () => {
                                       <Td>{item.batch}</Td>
                                       <Td>{item.code}</Td>
                                       <Td isNumeric>{item.bp}</Td>
+                                      <Td isNumeric>{item.mrp}</Td>
                                       <Td isNumeric>{item.count}</Td>
                                       <Td>
                                       <DeleteButton code={item.code} />

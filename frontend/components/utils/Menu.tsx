@@ -5,7 +5,8 @@ import { Key } from 'react'
 
 const navItems = [
   ["/","Product Stalk Info"],
-  ["/dealerInfo","Dealer Information"]
+  ["/dealerInfo","Dealer Information"],
+  ["/empInfo","Employee Information"]
 ]
 
 export const Menus = () =>{

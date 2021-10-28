@@ -13,8 +13,8 @@ import {
   ModalCloseButton,
   Button
 } from "@chakra-ui/react";
-import { DealerInfoForm} from "./DealerInfoForm";
-import DealerInfoTable from "./DealerTable";
+import { EmpInfoForm } from "./EmpInfoForm";
+import EmpInfoTable from "./EmpTable";
 
 
 const modalStyle = {
@@ -36,10 +36,10 @@ const AddModal = () => {
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Add Product Stalk</ModalHeader>
+          <ModalHeader>Add Employee Name</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-          <DealerInfoForm />
+          <EmpInfoForm />
           </ModalBody>
 
           <ModalFooter>
@@ -55,16 +55,16 @@ const AddModal = () => {
   )
 }
 
-const DealerInfoPage = () => {
+const EmpInfoPage = () => {
   return (
     <div>
-      <Navbar title="Dealer Info"/>
+      <Navbar title="Employee info"/>
       <DrawerMenu />
       <AddModal />
-      <DealerInfoTable />
+      <EmpInfoTable />
     </div>
   );
 };
 
-export default DealerInfoPage;
+export default EmpInfoPage;
 

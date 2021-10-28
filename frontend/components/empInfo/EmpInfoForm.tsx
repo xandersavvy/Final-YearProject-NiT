@@ -9,15 +9,15 @@ import {
 
 
 const formElements = [
-  ["Dealer Id","DealerId","text"],
-  ["Product Batch","batch","text"],
-  ["Product Code","code","text"],
-  ["Buying Price","bp","number"],
-  ["Maximum Retail Price","mrp","number"],
-  ["Product Count","count","number"]
+  
+  ["Employee Id","EmpId","text"],
+  ["Name","name","text"],
+  ["Contact No.","contact","number"],
+  ["Email Id","email","email"],
+  ["Designation","designation","text"]
 ]
 
-export  const StalkForm = () => {
+export  const EmpInfoForm = () => {
   
     return (
       <>

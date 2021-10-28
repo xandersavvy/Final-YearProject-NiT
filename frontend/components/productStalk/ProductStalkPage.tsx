@@ -58,7 +58,7 @@ const AddModal = () => {
 const ProductStalkPage = () => {
   return (
     <div>
-      <Navbar />
+      <Navbar title="Product Stalk"/>
       <DrawerMenu />
       <AddModal />
       <StalkTable />
