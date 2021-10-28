@@ -5,7 +5,7 @@ import {
   Tr,
   Th,
   Td } from "@chakra-ui/react"
-import DeleteButton from "./utils/DeleteButton"
+import DeleteButton from "../utils/DeleteButton"
 
 
 

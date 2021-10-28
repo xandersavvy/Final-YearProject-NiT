@@ -24,7 +24,6 @@ const DeleteButton = (props:ProductProps) => {
                                         <PopoverBody>Delete {props.code}?</PopoverBody>
                                         <PopoverFooter>
                                             <Button colorScheme="purple"
-                
                                             onClick={() => deleteItem(props.code)}
                                             >yes</Button>
                                         </PopoverFooter>

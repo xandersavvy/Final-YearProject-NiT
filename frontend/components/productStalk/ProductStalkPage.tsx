@@ -1,6 +1,6 @@
 import Head from "next/head";
-import { DrawerMenu } from "./Drawer";
-import Navbar from "./utils/Navbar";
+import { DrawerMenu } from "../Drawer";
+import Navbar from "../utils/Navbar";
 import StalkTable from "./StalkTable";
 import { useDisclosure } from "@chakra-ui/hooks";
 import { FcAddImage } from "react-icons/fc";
