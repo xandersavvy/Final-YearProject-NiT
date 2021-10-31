@@ -3,10 +3,8 @@ import { Divider, Flex, Heading } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import React from "react";
 import { navProps } from "../interfaces/propList";
-// import { useAuth } from "../lib/auth";
 
 const Navbar = (props:navProps) => {
-  // const { auth, signOut } = useAuth();
   const auth = true;
   const router = useRouter();
 
