@@ -1,0 +1,18 @@
+{
+  "Pratik": {
+    "Name": "Pratik Dey",
+    "Password": "something",
+    "Email": "pratikdey.pro@gmail.com",
+    "Type": "Employee",
+    "Verified": false,
+    "CreatedAt": "2021-11-25T18:43:47.240Z"
+  },
+  "Souvik": {
+    "Name": "Souvik Ghosh",
+    "Password": "lol",
+    "Email": "xanderbeby@gmail.com",
+    "Type": "Admin",
+    "Verified": true,
+    "CreatedAt": "2021-11-25T18:43:47.240Z"
+  }
+}

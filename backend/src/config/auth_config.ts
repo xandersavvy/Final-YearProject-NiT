@@ -1,1 +1,0 @@
-export const secret:string = process.env.SECRET_KEY as string

@@ -12,34 +12,33 @@ import {
   ModalFooter,
   ModalBody,
   ModalCloseButton,
-  Button
+  Button,
 } from "@chakra-ui/react";
 import { StalkForm } from "./ProductStalkForm";
 
-
 const modalStyle = {
-  "width":"100vw",
-  "display":"flex",
-  "flex-direction":"row",
-  "align-item":"flex-end",
-  "justify-content":"flex-end",
-}
+  width: "100vw",
+  display: "flex",
+  "flex-direction": "row",
+  "align-item": "flex-end",
+  "justify-content": "flex-end",
+};
 
 const AddModal = () => {
-    const { isOpen, onOpen, onClose } = useDisclosure()
+  const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <div style={modalStyle}>
       <Button onClick={onOpen} variant="ghost">
-        <FcAddImage size={30}/>
+        <FcAddImage size={30} />
       </Button>
 
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Add Product Stalk</ModalHeader>
+          <ModalHeader>Add Product Stock</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-          <StalkForm />
+            <StalkForm />
           </ModalBody>
 
           <ModalFooter>
@@ -50,15 +49,14 @@ const AddModal = () => {
           </ModalFooter>
         </ModalContent>
       </Modal>
-      
     </div>
-  )
-}
+  );
+};
 
 const ProductStalkPage = () => {
   return (
     <div>
-      <Navbar title="Product Stalk"/>
+      <Navbar title="Product Stock" />
       <DrawerMenu />
       <AddModal />
       <StalkTable />
@@ -67,4 +65,3 @@ const ProductStalkPage = () => {
 };
 
 export default ProductStalkPage;
-
