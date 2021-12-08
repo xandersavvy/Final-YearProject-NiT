@@ -10,6 +10,7 @@ import {
   useDisclosure
  
 } from "@chakra-ui/react"
+import router from "next/router";
 import {useRef} from 'react';
 import { Menus } from "./utils/Menu";
 
@@ -37,7 +38,9 @@ export const DrawerMenu = () => {
           </DrawerBody>
 
           <DrawerFooter> 
-            <Button>Logout</Button>
+            <Button
+              onClick={() => router.push("/login")}
+            >Logout</Button>
 
             </DrawerFooter>
         </DrawerContent>
