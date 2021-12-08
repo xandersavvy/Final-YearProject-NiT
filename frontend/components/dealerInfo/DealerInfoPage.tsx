@@ -36,7 +36,7 @@ const AddModal = () => {
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Add Product Stalk</ModalHeader>
+          <ModalHeader>Add Dealer Information</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
           <DealerInfoForm />

@@ -5,7 +5,7 @@ import { Container } from "@chakra-ui/layout";
 import { Stack } from "@chakra-ui/react";
 import router from "next/router";
 import { useState } from "react";
-
+import Head from "next/dist/shared/lib/head";
 
 
 
@@ -36,6 +36,11 @@ const LoginForm = () => {
     
     return (
     <Container>
+        <Head> 
+        <link rel="icon" href="https://image.freepik.com/free-vector/two-business-partners-handshaking_74855-6685.jpg" />
+            <title>Please login</title> 
+
+        </Head>
     <form onSubmit={handleSubmit}>
         <FormControl isRequired padding="4">
             <FormLabel>Email</FormLabel>

@@ -10,19 +10,34 @@ import DeleteButton from "../utils/DeleteButton"
 import BillModal from "./BillingModal"
 import jsPDF from "jspdf"
 import { billModalProps } from "../interfaces/propList"
-
-
+import router from "next/router"
+import { useRouter } from "next/router"
+import { FaWhatsapp } from "react-icons/fa"
+import { Button } from "@chakra-ui/button"
 
 const items = [
   {
     "Id":"ADTG90",
+    "contact": 8017559538,
+    "price": 1000,
+    "date": "2020-01-01",
+  },{
+    "Id":"ADTG90",
     "contact": 9876543210,
     "price": 1000,
     "date": "2020-01-01",
-  }
+  },{
+    "Id":"ADTG90",
+    "contact": 9876543210,
+    "price": 1000,
+    "date": "2020-01-01",
+  },
 ]
 
 const EmpInfoTable = () => {
+  const sendWhatsapp = (Id : String ,contact : number ,price:Number, date:String) => {
+    router.push(`https://wa.me/91${contact}/?text=Hello%20Thank%20for%20your%20order%20with%20us.%20Your%20order%20Id%20is%20${Id}%20and%20the%20price%20is%20${price}%20and%20the%20date%20of%20order%20is%20${date}`)
+  }
     return(
         <Table variant="simple">
           <Thead>
@@ -50,6 +65,16 @@ const EmpInfoTable = () => {
                                       </Td>
                                       <Td>
                                       <PrintButton Id={item.Id} />
+                                      </Td>
+                                      <Td>
+                                      <Button
+                                      type="button"
+
+                                      onClick={()=>sendWhatsapp(item.Id,item.contact,item.price,item.date)}
+
+                                      >
+                                        <FaWhatsapp />
+                                      </Button>
                                       </Td>
                                       </Tr>
            )}

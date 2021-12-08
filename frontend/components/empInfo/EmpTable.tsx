@@ -16,31 +16,31 @@ const items = [
     "name":"Money Dey",
     "contact": 9876543210,
     "email":"johndoe@getDomainLocale.com",
-    "Designation":"kolkata"
+    "Designation":"Salesman"
   }, {
     "Id":"ADTG90",
     "name":"Money Dey",
     "contact": 9876543210,
     "email":"johndoe@getDomainLocale.com",
-    "Designation":"kolkata"
+    "Designation":"Salesman"
   }, {
     "Id":"ADTG90",
     "name":"Money Dey",
     "contact": 9876543210,
     "email":"johndoe@getDomainLocale.com",
-    "Designation":"kolkata"
+    "Designation":"Salesman"
   }, {
     "Id":"ADTG90",
     "name":"Money Dey",
     "contact": 9876543210,
     "email":"johndoe@getDomainLocale.com",
-    "Designation":"kolkata"
+    "Designation":"Salesman"
   }, {
     "Id":"ADTG90",
     "name":"Money Dey",
     "contact": 9876543210,
     "email":"johndoe@getDomainLocale.com",
-    "Designation":"kolkata"
+    "Designation":"Salesman"
   }
 ]
 
