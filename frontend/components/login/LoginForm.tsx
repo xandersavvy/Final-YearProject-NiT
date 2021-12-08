@@ -2,6 +2,7 @@ import { Button } from "@chakra-ui/button";
 import { FormControl, FormLabel } from "@chakra-ui/form-control";
 import { Input } from "@chakra-ui/input";
 import { Container } from "@chakra-ui/layout";
+import { Stack } from "@chakra-ui/react";
 import router from "next/router";
 import { useState } from "react";
 
@@ -36,7 +37,7 @@ const LoginForm = () => {
     return (
     <Container>
     <form onSubmit={handleSubmit}>
-        <FormControl isRequired>
+        <FormControl isRequired padding="4">
             <FormLabel>Email</FormLabel>
             <Input
                 value={email}
@@ -46,7 +47,7 @@ const LoginForm = () => {
                 isRequired
             />
         </FormControl>
-        <FormControl isRequired>
+        <FormControl isRequired padding="4">
             <FormLabel>Password</FormLabel>
             <Input
                 value={password}
@@ -56,9 +57,11 @@ const LoginForm = () => {
                 isRequired
             />
         </FormControl>
-        {error && <p>{error}</p>}
-        <Button
 
+        {error && <p>{error}</p>}
+        <Stack spacing={4} direction='row' align='center' padding="4">
+        <Button
+            size="lg"
             type="submit"
             isLoading={loading}
             loadingText="Logging in..."
@@ -68,12 +71,17 @@ const LoginForm = () => {
             Login
         </Button>
         <Button
+            size="lg"
             type="button"
+            isLoading={loading}
+            loadingText="Logging in..."
             colorScheme="teal"
+            isDisabled={loading}
             onClick={() => router.push("/signup")}
         >
            Not a user?  Signup
         </Button>
+        </Stack>
     </form>
     </Container>
     );
