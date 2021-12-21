@@ -10,9 +10,9 @@ import {
     Heading
 
 } from '@chakra-ui/react'
-
 import router from 'next/router'
-
+import Head from 'next/head'
+import { FaBackward } from 'react-icons/fa'
 const formElements = [
   
   ["User Id","userId","text"],
@@ -31,6 +31,11 @@ export  const SignUpForm = () => {
         mt={4}
 
       >
+          <Head> 
+        <link rel="icon" href="https://image.freepik.com/free-vector/two-business-partners-handshaking_74855-6685.jpg" />
+            <title>Sign Up</title> 
+
+        </Head>
           <Heading
             as="h1"
             size="lg"
@@ -69,7 +74,8 @@ export  const SignUpForm = () => {
               colorScheme="teal"
               type="submit"
             >
-              Return to Login 
+            <FaBackward />
+              &nbsp; Return to Login 
             </Button>
             </Stack>
 

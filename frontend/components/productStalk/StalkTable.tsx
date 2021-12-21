@@ -79,7 +79,8 @@ const StalkTable = () => {
                                       <Td isNumeric>{item.mrp}</Td>
                                       <Td isNumeric>{item.count}</Td>
                                       <Td>
-                                      <DeleteButton code={item.code} />
+                                      <DeleteButton code={item.code}
+                                      />
                                       </Td>
                                       </Tr>
            )}

@@ -65,7 +65,8 @@ const EmpInfoTable = () => {
                                       <Td isNumeric>{item.contact}</Td>
                                       <Td>{item.Designation}</Td>
                                       <Td>
-                                      <DeleteButton code={item.Id} />
+                                      <DeleteButton code={item.Id}
+                                      />
                                       </Td>
                                       </Tr>
            )}

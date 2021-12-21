@@ -41,13 +41,6 @@ const AddModal = () => {
           <ModalBody>
           {/* <EmpInfoForm /> */}
           </ModalBody>
-
-          <ModalFooter>
-            <Button colorScheme="blue" mr={3} onClick={onClose}>
-              Close
-            </Button>
-            <Button variant="ghost">Save</Button>
-          </ModalFooter>
         </ModalContent>
       </Modal>
       

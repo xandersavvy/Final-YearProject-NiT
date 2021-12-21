@@ -33,7 +33,8 @@ const DeleteButton = (props:ProductProps) => {
 }
 
 const deleteItem = (code:string) => {
-      alert(code)
+    
+    alert(`${code} will be deleted after implementation`)
 }
 
 export default DeleteButton;

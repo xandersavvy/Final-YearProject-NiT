@@ -1,4 +1,3 @@
-import Head from "next/head";
 import { DrawerMenu } from "../Drawer";
 import Navbar from "../utils/Navbar";
 import { useDisclosure } from "@chakra-ui/hooks";
@@ -8,7 +7,6 @@ import {
   ModalOverlay,
   ModalContent,
   ModalHeader,
-  ModalFooter,
   ModalBody,
   ModalCloseButton,
   Button
@@ -42,12 +40,6 @@ const AddModal = () => {
           <EmpInfoForm />
           </ModalBody>
 
-          <ModalFooter>
-            <Button colorScheme="blue" mr={3} onClick={onClose}>
-              Close
-            </Button>
-            <Button variant="ghost">Save</Button>
-          </ModalFooter>
         </ModalContent>
       </Modal>
       
