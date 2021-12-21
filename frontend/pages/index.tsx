@@ -1,8 +1,12 @@
-import type { NextPage } from "next";
-import ProductStalkPage from "../components/productStalk/ProductStalkPage";
+import { NextPage } from "next";
+import LoginForm from "../components/login/LoginForm";
 
-const Home: NextPage = () => <ProductStalkPage />
+const Login:NextPage = () => {
+  return (
+    <div>
+      <LoginForm />
+    </div>
+  );
+};
 
-
-
-export default Home;
+export default Login;

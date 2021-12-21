@@ -39,7 +39,7 @@ export const DrawerMenu = () => {
 
           <DrawerFooter> 
             <Button
-              onClick={() => router.push("/login")}
+              onClick={() => router.push("/")}
             >Logout</Button>
 
             </DrawerFooter>

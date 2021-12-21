@@ -9,11 +9,14 @@ import Head from "next/dist/shared/lib/head";
 
 
 
-//make a login using chakra-ui
 
 const login = (email:String,password:String) => {
     //firebase.auth().signInWithEmailAndPassword(email, password)
-    router.push("/");
+    if(email === "xandersavy@gmail.com" && password === "12345678"){
+    router.push("/productStalk");
+    }else{
+        alert("Invalid credentials");
+    }
 }
 
 const LoginForm = () => {

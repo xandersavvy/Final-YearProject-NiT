@@ -39,7 +39,7 @@ const AddModal = () => {
           <ModalHeader>Add Employee Name</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-          <EmpInfoForm />
+          {/* <EmpInfoForm /> */}
           </ModalBody>
 
           <ModalFooter>
