@@ -3,7 +3,7 @@ import router from 'next/router'
 
 
 const navItems = [
-  ["/","Product Stalk Info"],
+  ["/productStalk","Product Stalk Info"],
   ["/dealerInfo","Dealer Information"],
   ["/empInfo","Employee Information"],
   ["/return","Return Product"],
