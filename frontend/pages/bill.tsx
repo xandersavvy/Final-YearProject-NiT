@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
-import BillPage from "../components/billing/BillPage";
+import InvoiceModal from "../components/billing/InvoiceModal";
 
-const Home: NextPage = () => <BillPage />
+const Home: NextPage = () => <InvoiceModal />;
 
 
 

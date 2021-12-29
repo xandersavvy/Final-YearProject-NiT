@@ -34,7 +34,7 @@ const items = [
   },
 ]
 
-const EmpInfoTable = () => {
+const BillInfoTable = () => {
   const sendWhatsapp = (Id : String ,contact : number ,price:Number, date:String) => {
     router.push(`https://wa.me/91${contact}/?text=Hello%20Thank%20for%20your%20order%20with%20us.%20Your%20order%20Id%20is%20${Id}%20and%20the%20price%20is%20${price}%20and%20the%20date%20of%20order%20is%20${date}`)
   }
@@ -100,4 +100,4 @@ const PrintButton = (props:billModalProps) => {
 
 
 
-export default EmpInfoTable
+export default BillInfoTable

@@ -13,8 +13,8 @@ import {
   ModalCloseButton,
   Button
 } from "@chakra-ui/react";
-import { EmpInfoForm } from "./EmpInfoForm";
-import EmpInfoTable from "./BillTable";
+import {InvoiceGeneratorForm } from "./InvoiceForm";
+import BillInfoTable from "./BillTable";
 
 
 const modalStyle = {
@@ -36,10 +36,10 @@ const AddModal = () => {
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Add Employee Name</ModalHeader>
+          <ModalHeader>Generate Invoices</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-          {/* <EmpInfoForm /> */}
+            <InvoiceGeneratorForm />
           </ModalBody>
         </ModalContent>
       </Modal>
@@ -51,10 +51,10 @@ const AddModal = () => {
 const BillPage = () => {
   return (
     <div>
-      <Navbar title="Billing info"/>
+      <Navbar title="Invoice generator"/>
       <DrawerMenu />
       <AddModal />
-      <EmpInfoTable />
+      <BillInfoTable />
     </div>
   );
 };

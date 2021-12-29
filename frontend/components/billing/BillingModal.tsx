@@ -10,7 +10,7 @@ import {
   Button
 } from "@chakra-ui/react";
 import { billModalProps } from "../interfaces/propList";
-import { EmpInfoForm } from "./EmpInfoForm";
+import { InvoiceGeneratorForm } from "./InvoiceForm";
 
 const BillModal = (props:billModalProps) => {
     const { isOpen, onOpen, onClose } = useDisclosure()
@@ -26,7 +26,7 @@ const BillModal = (props:billModalProps) => {
           <ModalHeader>{`details about Id ${props.Id}`}</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-           Bill Details
+           Details about Bill id
           </ModalBody>
 
           <ModalFooter>
