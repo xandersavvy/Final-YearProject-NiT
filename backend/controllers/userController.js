@@ -71,15 +71,14 @@ exports.getSingleuser = asyncError(async (req, res, next) => {
 exports.getAllUsers = asyncError(async (req, res, next) => {
     const userCount = await User.countDocuments();
     // const users = await User.find().select('-password');
-    const apiFeatures = new ApiFeatures(User , req.query).filter()
-                                                        .sort()
+    const apiFeatures = new ApiFeatures(User , req.query).filter().sort()
                                                         .paginate()
                                                         .searchByName()
                                                         .searchByEmail();
     
     const users = await apiFeatures.query;
     const pagedUsers = users.length;
-    const users = await User.find({});
+    // const user = await User.find({});
     res.status(200).json({
         success: true,
         data: users,

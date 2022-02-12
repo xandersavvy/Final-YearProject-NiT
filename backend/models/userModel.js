@@ -1,5 +1,5 @@
 const jsonwebtoken = require('jsonwebtoken');
-const mongoose = require('mongoose');
+const {Schema , model} = require('mongoose');
 const  validator = require('validator');
 const crypto = require('crypto');
 
@@ -9,7 +9,7 @@ const crypto = require('crypto');
 // or will check full funcionality of the project
 // at last they will just check our ppt , nothing else
 
-const userSchema = new mongoose.Schema({
+const userSchema = new Schema({
     name: {
         type: String,
         required: [true, 'Please Enter your name'],
@@ -75,4 +75,4 @@ userSchema.methods.getResetPasswordToken = function () {
     return resetToken;
 }
 
-module.exports = mongoose.model('User', userSchema);
+module.exports = model('User', userSchema);
