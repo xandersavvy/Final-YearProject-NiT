@@ -1,4 +1,6 @@
 const Products = require('../models/productModels');
+const{asyncError} = require('../middleware/error');
+
 
 exports.createProduct = asyncError(async (req, res, next) => {
     const { name , buyingPrice , mrp , count } = req.body;

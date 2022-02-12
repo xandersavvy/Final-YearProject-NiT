@@ -24,6 +24,13 @@ class ApiFeatures {
         this.query = this.query.find({...email});
         return this;
     }
+    searchByContact() {
+        const customerContact = this.queryString.customerContact?
+                        { customerContact: { $regex: `.*${this.queryString.customerContact}.*` , $options : `i` } ,}
+                        : {};
+        this.query = this.query.find({...customerContact});
+        return this;
+    }
     sort(){
         const sortBy = this.queryString.sortBy? this.queryString.sortBy : '_id';
         const order = this.queryString.order? this.queryString.order : -1;
