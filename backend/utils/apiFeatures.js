@@ -25,7 +25,7 @@ class ApiFeatures {
         return this;
     }
     sort(){
-        const sortBy = this.queryString.sortBy? this.queryString.sortBy : 'createdAt';
+        const sortBy = this.queryString.sortBy? this.queryString.sortBy : '_id';
         const order = this.queryString.order? this.queryString.order : -1;
         this.query = this.query.sort({[sortBy]: order});
         return this;    

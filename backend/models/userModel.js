@@ -50,7 +50,7 @@ const userSchema = new Schema({
     },
     joinedAt: {
         type: Date,
-        default: Date.now
+        default: new Date(Date.now())
     },
 });
 

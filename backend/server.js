@@ -27,6 +27,7 @@ app.use(require('cookie-parser')());
 app.use(require('cors')());
 app.use("/user",require('./routes/userRoute'));
 app.use("/dealer",require('./routes/dealerRoute'));
+app.use("/product",require('./routes/productRoute'));
 
 
 
