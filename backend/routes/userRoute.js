@@ -26,12 +26,12 @@ router.get('/', isAuthenticated, isHr , getAllUsers);
 
 
 //manage employees
-router.route('admin/:id').get(isAuthenticated, isAdmin, getEmployeePassword)
+router.route('/admin/:id').get(isAuthenticated, isAdmin, getEmployeePassword)
                         .put(isAuthenticated , isAdmin, updateEmployeeInformation)
                         .delete(isAuthenticated , isAdmin , deleteUser);
 
 
-router.get('password/:id', isAuthenticated , isAdmin , getEmployeePassword);
+router.get('/password/:id', isAuthenticated , isAdmin , getEmployeePassword);
 
 
 
