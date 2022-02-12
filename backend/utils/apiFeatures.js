@@ -41,9 +41,11 @@ class ApiFeatures {
         };
         const excludedFields = ['page', 'limit', 'sortBy', 'order', 'filter'];
         excludedFields.forEach(el => delete filters[el]);
-        let queryStr = JSON.stringify(queryObj); //convert queryObj to string 
+        let queryStr = JSON.stringify(filters); //convert queryObj to string 
         queryStr = queryStr.replace(/\b(gte|gt|lte|lt)\b/g, match => `$${match}`); //replace gte, gt, lte, lt with $gte, $gt, $lte, $lt
         this.query = this.query.find(JSON.parse(queryStr)); //convert string to object
         return this;
     }
 }
+
+module.exports = ApiFeatures;

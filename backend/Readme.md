@@ -1,0 +1,6 @@
+```
+PORT = 3010
+
+JWT_SECRET= 289302903289dowir
+JWT_EXPIRES_IN=  10d
+```
