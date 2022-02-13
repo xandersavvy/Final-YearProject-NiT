@@ -4,6 +4,8 @@ const ErrorHandler = require("../utils/errorHandler");
 
 //normal Error handling
 normalError = (err, req, res, next) => {
+    let statusCode = err.statusCode||500;
+    let message = err.message||'Something went wrong';
     switch(err.name) {
         case 'CastError':
             statusCode = 400;
