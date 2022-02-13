@@ -1,5 +1,6 @@
 require('dotenv').config({ path: '.env' });
 
+const bodyParser = require('body-parser');
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
@@ -25,6 +26,7 @@ app.use(normalError);
 app.use(express.urlencoded({ extended: true }));
 app.use(require('cookie-parser')());
 app.use(require('cors')());
+app.use(bodyParser.json());
 app.use("/user",require('./routes/userRoute'));
 app.use("/dealer",require('./routes/dealerRoute'));
 app.use("/product",require('./routes/productRoute'));

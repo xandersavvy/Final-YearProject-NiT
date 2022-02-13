@@ -11,7 +11,7 @@ exports.isAuthenticated = asyncError(
         const data = jsonwebtoken.verify(token, process.env.JWT_SECRET);
         if(!data.id) return next(new ErrorHandler( "Unauthorized",401));
         req.user = await User.findById(data.id);
-        console.log(req.user);
+        // console.log(req.user);
         next();
     } 
 )
@@ -32,7 +32,7 @@ exports.isManager = asyncError(async (req, res, next) => {
 })
 
 exports.isSalesMan = asyncError(async (req, res, next) => {
-    if(this.isAdmin) return next();
+    // if(this.isAdmin) return next();
     if(req.user.role !== "salesman"  && req.user.role !=="admin") return next(new ErrorHandler("Forbidden",403));
     next();
 })
