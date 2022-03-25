@@ -11,6 +11,7 @@
   "dependencies": {
     "@chakra-ui/react": "^1.6.10",
     "@types/react-router-dom": "^5.3.1",
+    "axios": "^0.26.1",
     "formik": "^2.2.9",
     "framer-motion": "^4.1.17",
     "jspdf": "^2.4.0",
@@ -19,10 +20,13 @@
     "react-dom": "17.0.2",
     "react-icons": "^4.3.1",
     "scss": "^0.2.4",
+    "swr": "^1.2.2",
+    "validator": "^13.7.0",
     "yup": "^0.32.11"
   },
   "devDependencies": {
     "@types/react": "17.0.32",
+    "@types/validator": "^13.7.1",
     "eslint": "7.32.0",
     "eslint-config-next": "11.1.2",
     "typescript": "4.4.4"

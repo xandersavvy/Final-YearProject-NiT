@@ -8,13 +8,13 @@ import {
   ModalOverlay,
   ModalContent,
   ModalHeader,
-  ModalFooter,
   ModalBody,
   ModalCloseButton,
   Button
 } from "@chakra-ui/react";
 import { DealerInfoForm} from "./DealerInfoForm";
 import DealerInfoTable from "./DealerTable";
+import getDealers from "./dealer.service";
 
 
 const modalStyle = {
@@ -49,6 +49,8 @@ const AddModal = () => {
 }
 
 const DealerInfoPage = () => {
+  console.log("DealerInfoPage");
+  console.log(getDealers())
   return (
     <div>
       <Navbar title="Dealer Info"/>

@@ -10,7 +10,7 @@ exports.registerUser = asyncError(async (req, res, next) => {
     
     
     const newUser = await User.create({
-        name , email , contact , password , role
+        name , email , contact , role
     });
 
     if(!newUser) ErrorHandler('User not created', 400);

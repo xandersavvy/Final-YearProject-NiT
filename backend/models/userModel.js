@@ -29,14 +29,6 @@ const userSchema = new Schema({
         unique: true,
         validate: validator.isMobilePhone
     },
-    password: {
-        type: String,
-        required: true,
-        minlength: 7,
-        maxlength: 16,
-        validate: validator.isAlphanumeric,
-        trim: true
-    },
     role: {
         type: String,
         required: true,
