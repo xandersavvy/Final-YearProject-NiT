@@ -1,5 +1,6 @@
 const Products = require('../models/productModels');
 const{asyncError} = require('../middleware/error');
+const ApiFeatures = require('../utils/apiFeatures');
 
 
 exports.createProduct = asyncError(async (req, res, next) => {
@@ -38,7 +39,7 @@ exports.getSingleProduct = asyncError(async (req, res, next) => {
 
 exports.getAllProducts = asyncError(async (req, res, next) => {
     const productCount = await Products.countDocuments();
-    const apiFeatures = new ApiFeatures(User , req.query).filter().sort()
+    const apiFeatures = new ApiFeatures(Products , req.query).filter().sort()
                                                         .paginate()
                                                         .searchByName()
                                                         .searchById();

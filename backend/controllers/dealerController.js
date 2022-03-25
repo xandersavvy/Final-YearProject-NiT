@@ -1,5 +1,7 @@
 const {asyncError} = require('../middleware/error');
 const Dealer = require("../models/dealerModels");
+const ApiFeatures = require('../utils/apiFeatures');
+
 
 
 exports.createDealer = asyncError( async (req, res, next) => {
