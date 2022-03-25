@@ -75,6 +75,10 @@ export  const EmpInfoForm = () => {
                           ...formData,
                           [ formElement[1]]: e.target.value
                         });
+                        setFormData({
+                          ...formData,
+                          [ formElement[1]]: e.target.value
+                        });
                         
                         console.log(formData);
                       }}
