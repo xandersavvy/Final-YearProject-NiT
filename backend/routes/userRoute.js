@@ -6,22 +6,22 @@ const { isAuthenticated, isAdmin , isHr} = require('../middleware/auth');
 
 const router = require('express').Router();
 
-router.post('/login', loginUser);
+router.route('/login').post(loginUser);
 
 
 
-router.post('/register', registerUser);
+router.route('/register').post(registerUser);
 
 // authenticated routes
 
-router.post('/logout',isAuthenticated, logoutUser);
+router.route('/logout').post(isAuthenticated, logoutUser);
 
 router.route('/password').put(isAuthenticated, updatePassword);
 
 // Hr things
 router.route('/:id').get(isAuthenticated, isHr, getSingleuser).put( isAuthenticated, isHr , updateRoleHr);
 
-router.get('/', isAuthenticated, isHr , getAllUsers);
+router.route('/').get( isAuthenticated, isHr , getAllUsers);
 
 
 
@@ -31,7 +31,7 @@ router.route('/admin/:id').get(isAuthenticated, isAdmin, getEmployeePassword)
                         .delete(isAuthenticated , isAdmin , deleteUser);
 
 
-router.get('/password/:id', isAuthenticated , isAdmin , getEmployeePassword);
+router.route('/password/:id').get( isAuthenticated , isAdmin , getEmployeePassword);
 
 
 
