@@ -75,6 +75,10 @@ export  const DealerInfoForm = () => {
                           ...formData,
                           [formElement[1]]: e.target.value
                         });
+                        setFormData({
+                          ...formData,
+                          [ formElement[1]]: e.target.value
+                        });
                         errorCheck();
                         console.log(formData);
                       }}
