@@ -1,6 +1,6 @@
-import { DrawerMenu } from "../Drawer";
-import Navbar from "../utils/Navbar";
-import { StalkForm } from "./ProductStalkForm";
+import  DrawerMenu  from "../Drawer";
+import Navbar from "../Navbar";
+import ProductForm from "./ProductForm";
 import { useEffect } from "react";
 import Cookies from "js-cookie";
 import router from "next/router";
@@ -17,7 +17,7 @@ const ProductStalkPage = () => {
     <div>
       <Navbar title="Product Stalk"/>
       <DrawerMenu />
-      <BaseModal childComponent={<StalkForm />} />
+      <BaseModal childComponent={<ProductForm />} />
       <BaseTable url={BASE_URL_PRODUCT} />
     </div>
   );

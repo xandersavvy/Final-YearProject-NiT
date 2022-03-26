@@ -5,26 +5,25 @@ import {
     Button    
 
 } from '@chakra-ui/react'
-import { useState } from 'react';
-import { BASE_URL_USER } from '../constants';
 import axios from 'axios';
-import isEmail from 'validator/lib/isEmail';
+import { useState } from 'react';
+import { BASE_URL_PRODUCT } from '../constants';
+
+
 
 const formElements = [
   ["Name","name","text"],
-  ["Contact No.","contact","number"],
-  ["Email Id","email","email"],
-  ["role","role","text"]
+  ["Buying Price","buyingPrice","number"],
+  ["M.R.P","mrp","number"],
+  ["Count","count","number"]
 ]
 
-const roles = ['admin','hr','manager','salesman']
-export  const EmpInfoForm = () => {
-
+const ProductForm = () => {
   const [formData, setFormData] = useState({
     "name": "",
-    "contact": "",
-    "email": "",
-    "role": ""
+    "buyingPrice": "",
+    "mrp": "",
+    "count": ""
   });
   const [formErrors, setFormErrors] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -32,7 +31,7 @@ export  const EmpInfoForm = () => {
   
   const handleSubmit = async () =>{
     setIsSubmitting(true);
-    const res = await axios.post(BASE_URL_USER,formData).then(res => {
+    const res = await axios.post(BASE_URL_PRODUCT,formData,{withCredentials:true}).then(res => {
       console.log(res);
       setIsSubmitting(false);}).catch(err => {
         console.log(err);
@@ -41,21 +40,19 @@ export  const EmpInfoForm = () => {
   console.log(res);
     setFormData({
       "name": "",
-    "contact": "",
-    "email": "",
-    "role": ""
+    "buyingPrice": "",
+    "mrp": "",
+    "count": ""
     });
   }
 
   const errorCheck = () => {
-    if(formData.contact.length > 3 && formData.name.length > 3 && 
-         isEmail(formData.email) && roles.includes(formData.role)) setFormErrors(false);
-    else setFormErrors(true);
+    if( formData.name.length < 3 || formData.buyingPrice.length < 1 || formData.count.length < 1 || 
+        formData.mrp.length < 1 || formData.buyingPrice > formData.mrp ) setFormErrors(true);
+    else
+      setFormErrors(false);
     }
-
-
-
-
+  
   
     return (
       <>
@@ -65,21 +62,16 @@ export  const EmpInfoForm = () => {
                       <>
                       <FormLabel htmlFor={formElement[1]}>{formElement[0]}</FormLabel>
                       <Input type={formElement[2]} 
-                      placeholder={`Enter ${formElement[0]}`} 
+                      placeholder={`Enter ${formElement[0]} , type: ${formElement[2]}`} 
                       name={formElement[1]} 
                       value={formData[formElement[1] as keyof typeof formData]}
                       isRequired
                       onChange={(e) => {
+                        setFormData({
+                          ...formData,
+                          [formElement[1]]: e.target.value
+                        });
                         errorCheck();
-                        setFormData({
-                          ...formData,
-                          [ formElement[1]]: e.target.value
-                        });
-                        setFormData({
-                          ...formData,
-                          [ formElement[1]]: e.target.value
-                        });
-                        
                         console.log(formData);
                       }}
                       />
@@ -100,3 +92,5 @@ export  const EmpInfoForm = () => {
           </>
     )
   }
+
+  export default ProductForm;

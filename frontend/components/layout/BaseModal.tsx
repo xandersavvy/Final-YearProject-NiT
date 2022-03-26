@@ -1,6 +1,5 @@
 import { Button, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, useDisclosure } from "@chakra-ui/react";
 import { FcAddImage } from "react-icons/fc";
-import { EmpInfoForm } from "../empInfo/EmpInfoForm";
 
 const modalStyle = {
     "width":"100vw",

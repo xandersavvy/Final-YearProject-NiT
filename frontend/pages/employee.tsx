@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
-import EmpInfoPage from "../components/empInfo/EmpInfoPage";
+import EmpPage from "../components/employee/EmpPage";
 
-const Home: NextPage = () => <EmpInfoPage />;
+const Home: NextPage = () => <EmpPage />;
 
 
 

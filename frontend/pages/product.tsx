@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
-import ProductStalkPage from "../components/productStalk/ProductStalkPage";
+import ProductPage from "../components/product/ProductPage";
 
-const Home: NextPage = () => <ProductStalkPage />
+const Home: NextPage = () => <ProductPage />
 
 
 

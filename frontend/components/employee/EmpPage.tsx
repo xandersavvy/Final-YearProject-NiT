@@ -1,6 +1,6 @@
-import { DrawerMenu } from "../Drawer";
-import Navbar from "../utils/Navbar";
-import { EmpInfoForm } from "./EmpInfoForm";
+import  DrawerMenu  from "../Drawer";
+import Navbar from "../Navbar";
+import EmpForm  from "./EmpForm";
 import { useEffect } from "react";
 import Cookies from "js-cookie";
 import router from "next/router";
@@ -8,7 +8,7 @@ import BaseTable from "../layout/BaseTable";
 import { BASE_URL_USER } from "../constants";
 import BaseModal from "../layout/BaseModal";
 
-const EmpInfoPage = () => {
+const EmpPage = () => {
   useEffect(() => {
     if(Cookies && !Cookies.get("token")) router.push("/");
   }, [])
@@ -17,11 +17,11 @@ const EmpInfoPage = () => {
     <div>
       <Navbar title="Employee info"/>
       <DrawerMenu />
-      <BaseModal childComponent={<EmpInfoForm />} />
+      <BaseModal childComponent={<EmpForm />} />
       <BaseTable url={BASE_URL_USER} />
     </div>
   );
 };
 
-export default EmpInfoPage;
+export default EmpPage;
 

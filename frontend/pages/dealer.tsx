@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
-import DealerInfoPage from "../components/dealerInfo/DealerInfoPage";
+import DealerPage from "../components/dealer/DealerPage";
 
-const Home: NextPage = () => <DealerInfoPage />
+const Home: NextPage = () => <DealerPage />
 
 
 

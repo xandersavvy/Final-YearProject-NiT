@@ -7,17 +7,32 @@ import {
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
-  useDisclosure
- 
+  useDisclosure 
 } from "@chakra-ui/react"
 import Cookies from "js-cookie";
 import router from "next/router";
-import {useRef} from 'react';
-import { Menus } from "./utils/Menu";
 
-export const DrawerMenu = () => {
+
+const navItems = [
+  ["/product","Product Stalk Info"],
+  ["/dealer","Dealer Information"],
+  ["/employee","Employee Information"]
+]
+
+const Menus = () =>{
+  navItems.map((navItem)=>console.log(navItem[0]))
+  return (
+   <div>
+     {navItems.map((navItem,key) => <Button colorScheme="blue" key={key}
+                                      variant ="ghost" isFullWidth
+                                      onClick={()=>router.push(navItem[0])}>{navItem[1]}</Button>)}
+    </div>
+  )
+}
+
+
+const DrawerMenu = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
-  const btnRef = useRef()
 
   const handleLogout = () => {
     Cookies.remove("token");
@@ -44,13 +59,12 @@ export const DrawerMenu = () => {
           </DrawerBody>
 
           <DrawerFooter> 
-            <Button
-              onClick={handleLogout}
-            >Logout</Button>
-
-            </DrawerFooter>
+            <Button onClick={handleLogout}>Logout</Button>
+          </DrawerFooter>
         </DrawerContent>
       </Drawer>
     </>
   )
 }
+
+export default DrawerMenu;

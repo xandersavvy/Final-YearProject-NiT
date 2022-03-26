@@ -1,7 +1,6 @@
-import Head from "next/head";
-import { DrawerMenu } from "../Drawer";
-import Navbar from "../utils/Navbar";
-import { DealerInfoForm} from "./DealerInfoForm";
+import  DrawerMenu from "../Drawer";
+import Navbar from "../Navbar";
+import  DealerForm from "./DealerForm";
 import { useEffect } from "react";
 import Cookies from "js-cookie";
 import router from "next/router";
@@ -10,7 +9,7 @@ import { BASE_URL_DEALER } from "../constants";
 import BaseModal from "../layout/BaseModal";
 
 
-const DealerInfoPage = () => {
+const DealerPage = () => {
 
   useEffect(() => {
     if(Cookies && !Cookies.get("token")) router.push("/");
@@ -20,11 +19,11 @@ const DealerInfoPage = () => {
     <div>
       <Navbar title="Dealer Info"/>
       <DrawerMenu />
-      <BaseModal childComponent={<DealerInfoForm />} />
+      <BaseModal childComponent={<DealerForm />} />
       <BaseTable url={BASE_URL_DEALER} />
     </div>
   );
 };
 
-export default DealerInfoPage;
+export default DealerPage;
 

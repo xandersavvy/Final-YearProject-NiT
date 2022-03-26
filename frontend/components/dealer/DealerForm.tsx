@@ -19,7 +19,7 @@ const formElements = [
   ["Product Type","type","text"]
 ]
 
-export  const DealerInfoForm = () => {
+const DealerForm = () => {
 
   const [formData, setFormData] = useState({
     "name": "",
@@ -96,3 +96,6 @@ export  const DealerInfoForm = () => {
           </>
     )
   }
+
+
+  export default DealerForm;

@@ -3,27 +3,26 @@ import {
     FormLabel,
     Input,
     Button    
-
 } from '@chakra-ui/react'
+import { ChangeEvent, useState } from 'react';
+import { BASE_URL_USER } from '../constants';
 import axios from 'axios';
-import { useState } from 'react';
-import { BASE_URL_PRODUCT } from '../constants';
-
-
+import isEmail from 'validator/lib/isEmail';
 
 const formElements = [
   ["Name","name","text"],
-  ["Buying Price","buyingPrice","number"],
-  ["M.R.P","mrp","number"],
-  ["Count","count","number"]
+  ["Contact No.","contact","number"],
+  ["Email Id","email","email"],
+  ["role","role","text"]
 ]
 
-export  const StalkForm = () => {
+const EmpForm = () => {
+
   const [formData, setFormData] = useState({
     "name": "",
-    "buyingPrice": "",
-    "mrp": "",
-    "count": ""
+    "contact": "",
+    "email": "",
+    "role": ""
   });
   const [formErrors, setFormErrors] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -31,53 +30,41 @@ export  const StalkForm = () => {
   
   const handleSubmit = async () =>{
     setIsSubmitting(true);
-    const res = await axios.post(BASE_URL_PRODUCT,formData,{withCredentials:true}).then(res => {
+    const res = await axios.post(BASE_URL_USER,formData).then(res => {
       console.log(res);
       setIsSubmitting(false);}).catch(err => {
         console.log(err);
         setIsSubmitting(false);
       });
-  console.log(res);
+    console.log(res);
     setFormData({
       "name": "",
-    "buyingPrice": "",
-    "mrp": "",
-    "count": ""
+    "contact": "",
+    "email": "",
+    "role": ""
     });
   }
 
-  const errorCheck = () => {
-    if( formData.name.length < 3 || formData.buyingPrice.length < 1 || formData.count.length < 1 || 
-        formData.mrp.length < 1 || formData.buyingPrice > formData.mrp ) setFormErrors(true);
-    else
-      setFormErrors(false);
+  const handleChange = (e: ChangeEvent<HTMLInputElement> , key: string) => {
+    setFormData({...formData,[key]: e.target.value});
+    if(formData.contact.length > 3 && formData.name.length > 3 && isEmail(formData.email) ) setFormErrors(false);
+    else setFormErrors(true);
     }
-  
   
     return (
       <>
                <FormControl >
-                  {
-                    formElements.map((formElement,key) => (
+                  {formElements.map((formElement,key) => (
                       <>
                       <FormLabel htmlFor={formElement[1]}>{formElement[0]}</FormLabel>
                       <Input type={formElement[2]} 
-                      placeholder={`Enter ${formElement[0]} , type: ${formElement[2]}`} 
+                      placeholder={`Enter ${formElement[0]}`} 
                       name={formElement[1]} 
                       value={formData[formElement[1] as keyof typeof formData]}
                       isRequired
-                      onChange={(e) => {
-                        setFormData({
-                          ...formData,
-                          [formElement[1]]: e.target.value
-                        });
-                        errorCheck();
-                        console.log(formData);
-                      }}
+                      onChange={(e) => handleChange(e,formElement[1])}
                       />
-                      </>
-
-                    ))}
+                      </>))}
                 </FormControl>
             <Button 
               mt={4}
@@ -92,3 +79,6 @@ export  const StalkForm = () => {
           </>
     )
   }
+
+
+export default EmpForm;
