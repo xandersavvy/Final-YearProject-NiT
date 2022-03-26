@@ -68,16 +68,16 @@ export  const DealerInfoForm = () => {
                       <Input type={formElement[2]} 
                       placeholder={`Enter ${formElement[0]}`} 
                       name={formElement[1]}
-                      value={formData[formElement[1] as keyof typeof formData]}
-                      isRequired
-                      onChange={(e) => {
-                        setFormData({
-                          ...formData,
-                          [formElement[1]]: e.target.value
-                        });
-                        errorCheck();
-                        console.log(formData);
-                      }}
+                        value={formData[formElement[1] as keyof typeof formData]}
+                        isRequired
+                        onChange={(e) => {
+                          setFormData({
+                            ...formData,
+                            [formElement[1]]: e.target.value
+                          });
+                          errorCheck();
+                          console.log(formData);
+                        }}
                       />
                       </>
 
