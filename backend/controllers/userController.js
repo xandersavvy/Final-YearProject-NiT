@@ -6,7 +6,7 @@ const ApiFeatures = require('../utils/apiFeatures');
 
 
 exports.registerUser = asyncError(async (req, res, next) => {
-    const { name, email, contact, password, role } = req.body;
+    const { name, email, contact, role } = req.body;
     
     
     const newUser = await User.create({

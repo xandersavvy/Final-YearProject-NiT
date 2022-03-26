@@ -4,59 +4,41 @@ import {
   Tbody,
   Tr,
   Th,
-  Td } from "@chakra-ui/react"
-import DeleteButton from "../utils/DeleteButton"
+  Td, 
+  Button} from "@chakra-ui/react"
+import axios from "axios";
+import useSWR from "swr";
+import { BASE_URL_PRODUCT } from "../constants";
+interface Item {
+  _id: string;
+  name: string;
+  buyingPrice: number;
+  mrp: number;
+  count: number;
+}
 
 
 
-
-const items = [
-  {
-    "dealerId":"ADTG90",
-    "batch":"ADTH7789",
-    "code":"cs7894",
-    "bp":900.00,
-    "count":90,
-    "mrp": 1000.00,
-  },{
-    "dealerId":"ADTG90",
-    "batch":"ADTH7789",
-    "code":"cs7894",
-    "bp":900.00,
-    "count":90,
-    "mrp": 1000.00
-  },{
-    "dealerId":"ADTG90",
-    "batch":"ADTH7789",
-    "code":"cs7894",
-    "bp":900.00,
-    "count":90,
-    "mrp": 1000.00
-  },{
-    "dealerId":"ADTG90",
-    "batch":"ADTH7789",
-    "code":"cs7894",
-    "bp":900.00,
-    "count":90,
-    "mrp": 1000.00
-  },{
-    "dealerId":"ADTG90",
-    "batch":"ADTH7789",
-    "code":"cs7894",
-    "bp":900.00,
-    "count":90,
-    "mrp": 1000.00
-  },{
-    "dealerId":"ADTG90",
-    "batch":"ADTH7789",
-    "code":"cs7894",
-    "bp":900.00,
-    "count":90,
-    "mrp": 1000.00
-  }
-]
 
 const StalkTable = () => {
+  const fetcher = () => axios.get(BASE_URL_PRODUCT).then(res => res.data);
+  const { data, error} = useSWR(BASE_URL_PRODUCT,fetcher);
+
+  if(!data) return <div>loading...</div>
+  if(error) return <div>error</div>
+  console.log(data)
+  let items:Item[] = data.data;
+
+  console.log(items)
+  const handleDelete = (id:string) => {
+    axios.delete(`${BASE_URL_PRODUCT}/${id}`).then(res => {
+      console.log(res);
+      items = items.filter((item :Item)=> {item._id !== id});
+    });
+  }
+
+
+
     return(
         <Table variant="simple">
           <Thead>
@@ -72,15 +54,14 @@ const StalkTable = () => {
         </Thead>
         <Tbody>
           {items.map( (item,key)=> <Tr key={key}>
-                                      <Td>{item.dealerId}</Td>
-                                      <Td>{item.batch}</Td>
-                                      <Td>{item.code}</Td>
-                                      <Td isNumeric>{item.bp}</Td>
+                                      <Td>{item._id}</Td>
+                                      <Td isNumeric>{item.buyingPrice}</Td>
                                       <Td isNumeric>{item.mrp}</Td>
                                       <Td isNumeric>{item.count}</Td>
                                       <Td>
-                                      <DeleteButton code={item.code}
-                                      />
+                                      <Button  onClick={()=>handleDelete(item._id)}>
+                                      Delete {item._id}
+                                      </Button>
                                       </Td>
                                       </Tr>
            )}
