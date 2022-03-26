@@ -37,7 +37,7 @@ export const DrawerMenu = () => {
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
-          <DrawerHeader>Hello Souvik</DrawerHeader>
+          <DrawerHeader>Hello {Cookies.get("token")}</DrawerHeader>
 
           <DrawerBody>
             <Menus />

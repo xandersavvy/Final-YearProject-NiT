@@ -1,4 +1,3 @@
-//signup form using chakra-ui
 import {
     FormControl,
     FormLabel,
@@ -9,13 +8,11 @@ import {
     StackDivider,
     Heading,
     Text
-
-} from '@chakra-ui/react'
+  } from '@chakra-ui/react'
 import router from 'next/router'
 import Head from 'next/head'
 import { FaBackward } from 'react-icons/fa'
 const formElements = [
-  
   ["User Id","userId","text"],
   ["Name","name","text"],
   ["Email Id","email","email"]
@@ -46,8 +43,7 @@ export  const SignUpForm = () => {
               Sign Up Form
           </Heading>
                <FormControl >
-                  {
-                    formElements.map((formElement,key) => (
+                  {formElements.map((formElement,key) => (
                       <>
                       <FormLabel htmlFor={formElement[1]}>{formElement[0]}</FormLabel>
                       <Input type={formElement[2]} 
@@ -56,9 +52,7 @@ export  const SignUpForm = () => {
                       disabled={true}
                       isRequired
                       />
-                      </>
-
-                    ))}
+                      </> ))}
                 </FormControl>
             <Text
               fontSize='2xl'
