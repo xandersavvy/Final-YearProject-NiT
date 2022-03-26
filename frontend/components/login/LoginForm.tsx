@@ -12,7 +12,7 @@ import Cookies from 'js-cookie';
 
 const login = (email:String,password:String) => {
     //firebase.auth().signInWithEmailAndPassword(email, password)
-    if(email === "xandersavy@gmail.com" && password === "12345678"){
+    if(email === "xandersavy@gmail.com" && password === "1234"){
     if(Cookies) Cookies.set("token", "souvik");
     router.push("/product");
     }else{
@@ -75,7 +75,7 @@ const LoginForm = () => {
             isLoading={loading}
             loadingText="Logging in..."
             colorScheme="teal"
-            isDisabled={loading}
+            // isDisabled={loading}
         >
             Login
         </Button>
@@ -85,7 +85,7 @@ const LoginForm = () => {
             isLoading={loading}
             loadingText="Logging in..."
             colorScheme="teal"
-            isDisabled={loading}
+            // isDisabled={loading}
             onClick={() => router.push("/signup")}
         >
            Not a user?  Signup

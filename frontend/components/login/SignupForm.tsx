@@ -7,7 +7,8 @@ import {
     Container,
     Stack,
     StackDivider,
-    Heading
+    Heading,
+    Text
 
 } from '@chakra-ui/react'
 import router from 'next/router'
@@ -52,21 +53,28 @@ export  const SignUpForm = () => {
                       <Input type={formElement[2]} 
                       placeholder={`Enter ${formElement[0]}`} 
                       name={formElement[1]} 
+                      disabled={true}
                       isRequired
                       />
                       </>
 
                     ))}
                 </FormControl>
-                
+            <Text
+              fontSize='2xl'
+              color={'gray.500'}
+              textAlign='center'
+            >
+              Site is Under construction
+            </Text>
             <Stack
             spacing={4} direction='row' align='center' padding="4"
             >
             <Button 
               colorScheme="teal"
               type="submit"
+              isLoading={true}
             >
-              Sign Up
             </Button>
             <StackDivider />
             <Button 
