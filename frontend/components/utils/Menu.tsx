@@ -3,9 +3,9 @@ import router from 'next/router'
 
 
 const navItems = [
-  ["/productStalk","Product Stalk Info"],
-  ["/dealerInfo","Dealer Information"],
-  ["/empInfo","Employee Information"]
+  ["/product","Product Stalk Info"],
+  ["/dealer","Dealer Information"],
+  ["/employee","Employee Information"]
 ]
 
 export const Menus = () =>{

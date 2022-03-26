@@ -6,14 +6,15 @@ import { Stack } from "@chakra-ui/react";
 import router from "next/router";
 import { useState } from "react";
 import Head from "next/dist/shared/lib/head";
-
+import Cookies from 'js-cookie';
 
 
 
 const login = (email:String,password:String) => {
     //firebase.auth().signInWithEmailAndPassword(email, password)
     if(email === "xandersavy@gmail.com" && password === "12345678"){
-    router.push("/productStalk");
+    if(Cookies) Cookies.set("token", "souvik");
+    router.push("/product");
     }else{
         alert("Invalid credentials");
     }

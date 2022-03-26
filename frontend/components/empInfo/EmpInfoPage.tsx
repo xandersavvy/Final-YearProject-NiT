@@ -13,6 +13,9 @@ import {
 } from "@chakra-ui/react";
 import { EmpInfoForm } from "./EmpInfoForm";
 import EmpInfoTable from "./EmpTable";
+import { useEffect } from "react";
+import Cookies from "js-cookie";
+import router from "next/router";
 
 
 const modalStyle = {
@@ -48,6 +51,10 @@ const AddModal = () => {
 }
 
 const EmpInfoPage = () => {
+  useEffect(() => {
+    if(Cookies && !Cookies.get("token")) router.push("/");
+  }, [])
+  
   return (
     <div>
       <Navbar title="Employee info"/>

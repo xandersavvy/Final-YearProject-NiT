@@ -10,6 +10,7 @@ import {
   useDisclosure
  
 } from "@chakra-ui/react"
+import Cookies from "js-cookie";
 import router from "next/router";
 import {useRef} from 'react';
 import { Menus } from "./utils/Menu";
@@ -17,6 +18,11 @@ import { Menus } from "./utils/Menu";
 export const DrawerMenu = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
   const btnRef = useRef()
+
+  const handleLogout = () => {
+    Cookies.remove("token");
+    router.push("/");
+  }
 
   return (
     <>
@@ -39,7 +45,7 @@ export const DrawerMenu = () => {
 
           <DrawerFooter> 
             <Button
-              onClick={() => router.push("/")}
+              onClick={handleLogout}
             >Logout</Button>
 
             </DrawerFooter>

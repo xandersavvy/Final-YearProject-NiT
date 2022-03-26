@@ -15,6 +15,9 @@ import {
 import { DealerInfoForm} from "./DealerInfoForm";
 import DealerInfoTable from "./DealerTable";
 import getDealers from "./dealer.service";
+import { useEffect } from "react";
+import Cookies from "js-cookie";
+import router from "next/router";
 
 
 const modalStyle = {
@@ -51,6 +54,11 @@ const AddModal = () => {
 const DealerInfoPage = () => {
   console.log("DealerInfoPage");
   console.log(getDealers())
+
+  useEffect(() => {
+    if(Cookies && !Cookies.get("token")) router.push("/");
+  }, [])
+  
   return (
     <div>
       <Navbar title="Dealer Info"/>

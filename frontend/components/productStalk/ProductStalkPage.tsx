@@ -9,12 +9,14 @@ import {
   ModalOverlay,
   ModalContent,
   ModalHeader,
-  ModalFooter,
   ModalBody,
   ModalCloseButton,
   Button
 } from "@chakra-ui/react";
 import { StalkForm } from "./ProductStalkForm";
+import { useEffect } from "react";
+import Cookies from "js-cookie";
+import router from "next/router";
 
 
 const modalStyle = {
@@ -49,6 +51,10 @@ const AddModal = () => {
 }
 
 const ProductStalkPage = () => {
+  useEffect(() => {
+    if(Cookies && !Cookies.get("token")) router.push("/");
+  }, [])
+  
   return (
     <div>
       <Navbar title="Product Stalk"/>
