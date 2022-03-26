@@ -19,20 +19,20 @@ const userSchema = new Schema({
         type: String,
         required: [true, 'Please Enter your email'],
         trim: true,
-        unique: true,
+        // unique: true,
         validate: validator.isEmail
     },
     contact:{
         type: String,
         required: true,
         trim: true,
-        unique: true,
+        // unique: true,
         validate: validator.isMobilePhone
     },
     role: {
         type: String,
         required: true,
-        enum: ['admin', 'hr', 'manager', 'salesman'],
+        // enum: ['admin', 'hr', 'manager', 'salesman'],
         default: 'salesman',
         trim: true
     },

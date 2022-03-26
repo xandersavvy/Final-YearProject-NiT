@@ -13,14 +13,14 @@ const dealerSchema = new Schema({
             type: String,
             required: [true, "Please Enter Dealer email"],
             trim: true,
-            unique: true,
+            // unique: true,
             validate: validator.isEmail
         },
         contact:{
             type: String,
             required: true,
             trim: true,
-            unique: true,
+            // unique: true,
             validate: validator.isMobilePhone
         },
         location:{
@@ -36,10 +36,6 @@ const dealerSchema = new Schema({
             required: [true, "Please Enter type of the product dealer is selling"],
             maxlength: [30, "Please Enter less than 30 characters"],
             trim: true,
-        },
-        due:{
-            type: Number,
-            default: 0  
         }
 })
 
