@@ -4,7 +4,7 @@ import {
     Input,
     Button    
 } from '@chakra-ui/react'
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, useEffect, useState } from 'react';
 import { BASE_URL_USER } from '../constants';
 import axios from 'axios';
 import isEmail from 'validator/lib/isEmail';
@@ -26,7 +26,11 @@ const EmpForm = () => {
   });
   const [formErrors, setFormErrors] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
-
+  useEffect(() => {
+    errorCheck();
+    console.log(formData);
+   // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, [formData])
   
   const handleSubmit = async () =>{
     setIsSubmitting(true);
@@ -45,8 +49,7 @@ const EmpForm = () => {
     });
   }
 
-  const handleChange = (e: ChangeEvent<HTMLInputElement> , key: string) => {
-    setFormData({...formData,[key]: e.target.value});
+  const errorCheck = () => {
     if(formData.contact.length > 3 && formData.name.length > 3 && isEmail(formData.email) ) setFormErrors(false);
     else setFormErrors(true);
     }
@@ -62,7 +65,9 @@ const EmpForm = () => {
                       name={formElement[1]} 
                       value={formData[formElement[1] as keyof typeof formData]}
                       isRequired
-                      onChange={(e) => handleChange(e,formElement[1])}
+                      onChange={e => setFormData(prevFormData => {
+                        return {...prevFormData,[e.target.name]: e.target.value}
+                      })}
                       />
                       </>))}
                 </FormControl>

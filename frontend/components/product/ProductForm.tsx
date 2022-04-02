@@ -6,7 +6,7 @@ import {
 
 } from '@chakra-ui/react'
 import axios from 'axios';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { BASE_URL_PRODUCT } from '../constants';
 
 
@@ -18,6 +18,7 @@ const formElements = [
   ["Count","count","number"]
 ]
 
+
 const ProductForm = () => {
   const [formData, setFormData] = useState({
     "name": "",
@@ -27,7 +28,12 @@ const ProductForm = () => {
   });
   const [formErrors, setFormErrors] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
-
+  useEffect(() => {
+    errorCheck();
+    console.log(formData);
+   // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, [formData])
+  
   
   const handleSubmit = async () =>{
     setIsSubmitting(true);
@@ -66,14 +72,9 @@ const ProductForm = () => {
                       name={formElement[1]} 
                       value={formData[formElement[1] as keyof typeof formData]}
                       isRequired
-                      onChange={(e) => {
-                        setFormData({
-                          ...formData,
-                          [formElement[1]]: e.target.value
-                        });
-                        errorCheck();
-                        console.log(formData);
-                      }}
+                      onChange={e => setFormData(prevFormData => {
+                        return {...prevFormData,[e.target.name]: e.target.value}
+                      })}
                       />
                       </>
 

@@ -5,7 +5,7 @@ import {
     Button    
 
 } from '@chakra-ui/react'
-import { useState } from 'react';
+import {  useEffect, useState } from 'react';
 import axios from 'axios';
 import { BASE_URL_DEALER } from '../constants';
 
@@ -22,15 +22,19 @@ const formElements = [
 const DealerForm = () => {
 
   const [formData, setFormData] = useState({
-    "name": "",
-    "email": "",
-    "contact": "",
-    "location": "",
-    "type": ""
+    name: "",
+    email: "",
+    contact: "",
+    location: "",
+    type: ""
   });
   const [formErrors, setFormErrors] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
-
+  useEffect(() => {
+    errorCheck();
+    console.log(formData);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, [formData])
   
   const handleSubmit = async () =>{
     setIsSubmitting(true);
@@ -40,15 +44,18 @@ const DealerForm = () => {
         console.log(err);
         setIsSubmitting(false);
       });
+   
   console.log(res);
     setFormData({
-      "name": "",
-      "email": "",
-      "contact": "",
-      "location": "",
-      "type": ""
+      name: "",
+      email: "",
+      contact: "",
+      location: "",
+      type: ""
     });
   }
+
+  
 
   const errorCheck = () => {
     if(formData.contact.length < 3 || formData.name.length < 3 || 
@@ -70,15 +77,10 @@ const DealerForm = () => {
                       name={formElement[1]}
                         value={formData[formElement[1] as keyof typeof formData]}
                         isRequired
-                        onChange={(e) => {
-                          setFormData({
-                            ...formData,
-                            [formElement[1]]: e.target.value
-                          });
-                          errorCheck();
-                          console.log(formData);
-                        }}
-                      />
+                        onChange={e => setFormData(prevFormData => {
+                          return {...prevFormData,[e.target.name]: e.target.value}
+                        })}
+                        />
                       </>
 
                     ))}
