@@ -25,7 +25,7 @@ app.use(express.json());
 app.use(normalError);
 app.use(express.urlencoded({ extended: true }));
 app.use(require('cookie-parser')());
-app.use(require('cors')());
+app.use(require('cors')({ credentials: true, origin: 'http://localhost:3000'}));
 app.use(bodyParser.json());
 app.use("/user",require('./routes/userRoute'));
 app.use("/dealer",require('./routes/dealerRoute'));

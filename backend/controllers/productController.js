@@ -1,5 +1,5 @@
 const Products = require('../models/productModels');
-const{asyncError} = require('../middleware/error');
+const {asyncError} = require('../middleware/error');
 const ApiFeatures = require('../utils/apiFeatures');
 
 
@@ -9,6 +9,7 @@ exports.createProduct = asyncError(async (req, res, next) => {
          name, buyingPrice, mrp, count
     });
     if(!product) ErrorHandler("Product can not be created", 404);
+    console.log("Product created");
     res.status(201).json({
         success: true,
         data: product
@@ -38,6 +39,7 @@ exports.getSingleProduct = asyncError(async (req, res, next) => {
 })
 
 exports.getAllProducts = asyncError(async (req, res, next) => {
+    console.log("Products found");
     const productCount = await Products.countDocuments();
     const apiFeatures = new ApiFeatures(Products , req.query).filter().sort()
                                                         .paginate()
