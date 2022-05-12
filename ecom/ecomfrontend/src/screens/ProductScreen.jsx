@@ -49,7 +49,8 @@ function ProductScreen (props) {
                                 <div className='row top'>
                                     {/* product image */}
                                     <div className='col-2'>
-                                        <img className='large' src={product.image} alt={product.name} />
+                                        <img className='large' 
+                                            src={`https://via.placeholder.com/64x64?text=${product.name}`} alt={product.name} />
                                     </div>
 
                                     {/* description */}

@@ -74,7 +74,7 @@ function CartScreen(props) {
                                                     ))}
                                                 </select>
                                             </div>
-                                            <div>${ item.mrp }</div>
+                                            <div>${ item.price }</div>
                                             <div>
                                                 <button
                                                     type="button"
