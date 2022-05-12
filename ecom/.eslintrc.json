@@ -37,5 +37,5 @@
     //   // "semi": ["error", "always"],
     //   "vars-on-top": "error",
     //   "yoda": "error"
-    }
+    // }
   }

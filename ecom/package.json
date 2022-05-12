@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "node server/server.js",
+    "start": "nodemon server/server.js",
     "start:server": "nodemon server/server.js",
     "start:client": "cd client && npm start",
     "dev": "concurrently \"npm run start:server\" \"npm run start:client\"",
@@ -35,7 +35,6 @@
   },
   "devDependencies": {
     "eslint": "^7.12.1",
-    "eslint-plugin-react": "^7.22.0",
     "nodemon": "^2.0.6"
   }
 }

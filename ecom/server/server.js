@@ -5,7 +5,6 @@ const mongoose = require('mongoose');
 const userRouter = require('./routes/userRouter');
 const productRouter = require('./routes/productRouter');
 const orderRouter = require('./routes/orderRouter');
-const dealerRouter = require('./routes/dealerRouter');
 
 const app = express();
 
@@ -27,8 +26,6 @@ app.use(express.json());
 app.use('/api/users', userRouter);
 app.use('/api/products', productRouter);
 app.use('/api/orders', orderRouter);
-app.use('/api/dealers', dealerRouter);
-
 
 
 //Paypal client ID from .env file. send back to front end
