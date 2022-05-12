@@ -9,23 +9,18 @@ import {BiArrowBack} from 'react-icons/bi';
 import { GiPriceTag } from 'react-icons/gi';
 
 function ProductScreen (props) {
-    // console.log(props);
-
+    
     const dispatch = useDispatch();
-    //props.match.params is the url path /product/:id
-    //props.match.params.id = id (1, 2 , 3 etc... )
-    // only return the product info of the one being clicked
+    
     const productId = props.match.params.id;
 
     const [ qty, setQty ] = useState(1);
 
-    // use store productDetails to replace product from seed data
     const productDetails = useSelector(state => state.productDetails);
-    // decontruct product, loading, error from productDetails 
+    
     const { product, loading, error } = productDetails;
 
-    // console.log(productDetails);
-
+    
     useEffect(() => {
         dispatch(detailsProduct(productId));
     
@@ -45,9 +40,7 @@ function ProductScreen (props) {
                         : (
                             <div>
                                 {/* back to result link  */}
-                                <Link to='/'> 
-                                    <BiArrowBack />
-                                </Link>
+                                <Link to='/'> <BiArrowBack /></Link>
 
                                 <div className='row top'>
                                     {/* product image */}
@@ -55,8 +48,6 @@ function ProductScreen (props) {
                                         <img className='large' 
                                             src={`https://via.placeholder.com/64x64?text=${product.name}`} alt={product.name} />
                                     </div>
-
-                                    {/* description */}
                                     <div className='col-1'>
                                         <ul>
                                             <li>
@@ -67,7 +58,6 @@ function ProductScreen (props) {
                                             </li>
                                             <li> <GiPriceTag/> ${product.mrp}</li>
                                             <li>
-                                                Description:
                                                 <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia rem dolorum consequatur dolor dolorem fuga, provident id libero, doloremque laudantium officiis adipisci earum quaerat harum voluptatem ullam est vel possimus. </p>
                                             </li>
                                         </ul>
@@ -75,7 +65,7 @@ function ProductScreen (props) {
 
                                     {/* action */}
                                     <div className='col-1'>
-                                        <div className='card car-body'>
+                                        <div className='card card-body-1'>
                                             <ul>
                                                 <li>
                                                     <div className='row'>
