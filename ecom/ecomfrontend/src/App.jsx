@@ -13,6 +13,7 @@ import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import OrderScreen from './screens/OrderScreen';
 import OrderHisotyScreen from './screens/OrderHisotyScreen';
 import ProfileScreen from './screens/ProfileScreen';
+import { GiAbstract014 , GiShoppingCart , GiPerson} from "react-icons/gi";
 
 function App () {
     // get cart from redux store using useSelector
@@ -35,12 +36,12 @@ function App () {
                 <header className='row'>
                     <div>
                         <Link className='brand' to='/'>
-							Zankoo
+							<GiAbstract014 />
                         </Link>
                     </div>
                     <div>
                         <Link to='/cart'>
-                            Cart
+                            <GiShoppingCart />
                             {
                                 cartItems.length > 0 && (
                                     <span className='badge'>{ cartItems.length }</span>
@@ -52,7 +53,7 @@ function App () {
                                 ? (
                                     <div className='dropdown'>
                                         <Link to="#">
-                                            { userInfo.name } 
+                                            <GiPerson />
                                             <i className="fa fa-caret-down"></i>{ ' ' }
                                         </Link> 
                                         <ul className='dropdown-content'>

@@ -1,25 +1,12 @@
-/* 
-Colors: 
-header/foooter-bg/dropdown-bg #203040; 
-header/footer -text: #fff; 
-link-hoveer/checkout-steps-active/: #ff8000; 
-card-bg: #f8f8f8;
-card-border/checkout-steps-border/: #c0c0c0;
-rating:  #f0c040;
-numReviews: #404040;
-success/alert-success: #20a020;
-error, alert-error:  #a02020;
-button-bg: #f8f8f8;
-button-border:#a4a4a4
-button-primary-bg: #f0c040;
-button-hover-border: #404040;
-alert-info: #2020a0;
-alert-info-bg: #e0e0ff;
-alert-error-bg: #ffe0e0e0;
-alert-success-bg: #eeffe0;
-badge-bg: #f02020
-table tbody tr bg: #f4f4f4;
-*/
+:root{
+	--primary  : #0275d8;	
+	--success : #5cb85c;	
+	--info:#5bc0de;
+	--warning:#f0ad4e;	
+	--danger:#d9534f;	
+	--inverse:#292b2c;
+	--faded:#f7f7f7;
+}
 
 /* Common */
 html {
@@ -40,7 +27,7 @@ body {
 }
 
 h1 {
-	font-size: 1.8rem;
+	font-size: 1.3rem;
 	padding: 1rem 0;
 }
 
@@ -82,11 +69,11 @@ button {
 
 button {
 		cursor: pointer;
-		background-color: #f8f8f8;
+		background-color: var(--danger);
 }
 
 button.primary {
-	background-color: #f0c040;
+	background-color: var(--success);
 }
 
 button.block {
@@ -162,12 +149,12 @@ a.brand {
 }
 
 .badge {
-	background-color: #f02020;
+	background-color: var(--info);
 	color: #fff;
 	border-radius: 50%;
 	padding: 0.2rem 0.6rem;
-	font-size: 1.4rem;
-	margin-left: 0.2rem;
+	font-size: 1rem;
+	margin-left: 0.3rem;
 }
 /* Image */
 img {
@@ -192,18 +179,23 @@ img.large {
 /* Card */
 .card {
 	border: 0.1rem #c0c0c0 solid;
-	background-color: #f8f8f8;
-	border-radius: 0.5rem;
+	background-color: var(--faded);
+	border-radius: 1%;
 	margin: 1rem;
 }
 .card-body {
-	padding: 1rem;
+	height:8rem;
+	width: 8rem;
+	padding: 0.5rem;
 }
 .card-body > * {
-	margin-bottom: 0.5rem;
+	display: block;
+	margin: 0;
+	padding: 0;
+	margin-bottom: 0.2rem;
 }
 .price {
-	font-size: 2rem;
+	font-size: 1rem;
 }
 /* Rating */
 .rating span {

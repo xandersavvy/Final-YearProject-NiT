@@ -18,7 +18,6 @@ function HomeScreen () {
     useEffect(() => {
         // use dispatch to replace axios product fetch and set loading, error. Make sure to call listProducts function 
         dispatch(listProducts());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return (

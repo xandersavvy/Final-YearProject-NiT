@@ -5,7 +5,8 @@ import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import Rating from '../components/Rating';
 import { detailsProduct } from '../actions/productActions';
-// import data from '../data/products';
+import {BiArrowBack} from 'react-icons/bi';
+import { GiPriceTag } from 'react-icons/gi';
 
 function ProductScreen (props) {
     // console.log(props);
@@ -44,7 +45,9 @@ function ProductScreen (props) {
                         : (
                             <div>
                                 {/* back to result link  */}
-                                <Link to='/'> Back To Result</Link>
+                                <Link to='/'> 
+                                    <BiArrowBack />
+                                </Link>
 
                                 <div className='row top'>
                                     {/* product image */}
@@ -62,7 +65,7 @@ function ProductScreen (props) {
                                             <li>
                                                 <Rating rating="5" numReviews="0" />
                                             </li>
-                                            <li>Price: ${product.mrp}</li>
+                                            <li> <GiPriceTag/> ${product.mrp}</li>
                                             <li>
                                                 Description:
                                                 <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia rem dolorum consequatur dolor dolorem fuga, provident id libero, doloremque laudantium officiis adipisci earum quaerat harum voluptatem ullam est vel possimus. </p>
