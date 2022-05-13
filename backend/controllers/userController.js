@@ -13,19 +13,19 @@ exports.registerUser = asyncError(async (req, res, next) => {
         name , email , contact , role
     });
 
-    if(!newUser) ErrorHandler('User not created', 400);
+    if(!newUser) new ErrorHandler('User not created', 400);
     sendToken(newUser, 201, res);
 });
 
 exports.loginUser = asyncError(async (req, res, next) => {
     const { email, password } = req.body;
-    if(!email || !password) ErrorHandler('Please enter email and password', 400);
+    if(!email || !password) new ErrorHandler('Please enter email and password', 400);
 
 
     const  user = await User.findOne({ email });
-    if(!user) ErrorHandler('Invalid email or password', 401);
+    if(!user) new ErrorHandler('Invalid email or password', 401);
     const isMatch = await user.isValidPassword(password);
-    if(!isMatch) ErrorHandler('Invalid email or password', 401);
+    if(!isMatch) new ErrorHandler('Invalid email or password', 401);
     sendToken(user, 200, res);
 });
 
@@ -43,7 +43,7 @@ exports.logoutUser = asyncError(async (req, res, next) => {
 
 exports.updatePassword = asyncError(async (req, res, next) => {
     const user = await User.findById(req.user.id).select('+password');
-    if(!user) ErrorHandler('User not found', 404);
+    if(!user) new ErrorHandler('User not found', 404);
     // //check current password
     // const isPasswordMatch = await user.correctPassword(req.body.currentPassword);
     // if(!isPasswordMatch) return next(new errorHandler('Current password is incorrect',400));
@@ -61,7 +61,7 @@ exports.updatePassword = asyncError(async (req, res, next) => {
 //Hr Things
 exports.getSingleuser = asyncError(async (req, res, next) => {
     const user = await User.findById(req.params.id);
-    if(!user) ErrorHandler('User not found', 404);
+    if(!user) new ErrorHandler('User not found', 404);
     res.status(200).json({
         success: true,
         data: user
@@ -109,7 +109,7 @@ exports.updateRoleHr = asyncError(async (req, res, next) => {
 
 exports.deleteUser = asyncError(async (req, res, next) => {
     const user = await User.findByIdAndDelete(req.params.id);
-    if(!user) ErrorHandler('User not found', 404);
+    if(!user) new ErrorHandler('User not found', 404);
     res.status(204).json({
         success: true,
         data: {}
@@ -129,7 +129,7 @@ exports.updateEmployeeInformation = asyncError( async(req,res,next) => {
     }, {
         new: true
     });
-    if(!user) ErrorHandler('User not found', 404);
+    if(!user) new ErrorHandler('User not found', 404);
     res.status(200).json({
         success: true,
         data: {}
@@ -138,7 +138,7 @@ exports.updateEmployeeInformation = asyncError( async(req,res,next) => {
 
 exports.getSingleEmployee = asyncError(async (req, res, next) => {
     const user = await User.findById(req.params.id);
-    if(!user) ErrorHandler('Employee not found', 404);
+    if(!user) new ErrorHandler('Employee not found', 404);
     res.status(200).json({
         success: true,
         data: user
@@ -148,7 +148,7 @@ exports.getSingleEmployee = asyncError(async (req, res, next) => {
 
 exports.getEmployeePassword = asyncError(async (req, res, next) => {
     const user = await User.findById(req.params.id).select('+password');
-    if(!user) ErrorHandler('User not found', 404);
+    if(!user) new ErrorHandler('User not found', 404);
     res.status(200).json({
         success: true,
         data: {
