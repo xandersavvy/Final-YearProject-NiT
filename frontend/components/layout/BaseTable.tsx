@@ -28,7 +28,10 @@ import {
       axios.delete(`${props.url}/${id}`).then(res => {
         console.log(res);
         items = items.filter(item => item._id !== id);
-      });
+      }).then( res => {
+        location.reload();
+        }
+      );
     }
       return(
           <Table variant="simple">

@@ -38,8 +38,10 @@ const ProductForm = () => {
   const handleSubmit = async () =>{
     setIsSubmitting(true);
     await axios.post(BASE_URL_PRODUCT,formData,{withCredentials:true}).then(res => {
-      console.log(res);
-      setIsSubmitting(false);}).catch(err => {
+      // console.log(res);
+      setIsSubmitting(false);
+      location.reload();
+    }).catch(err => {
         console.log(err);
         setIsSubmitting(false);
       });

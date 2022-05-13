@@ -65,7 +65,7 @@ function ProductScreen (props) {
 
                                     {/* action */}
                                     <div className='col-1'>
-                                        <div className='card card-body-1'>
+                                        <div className='card card-body'>
                                             <ul>
                                                 <li>
                                                     <div className='row'>

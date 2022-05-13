@@ -10,7 +10,7 @@ function Product (props) {
             <Link to={`/product/${product._id}`}>
                 <img className='medium' src={`https://via.placeholder.com/70x90.png?text=${product.name}`} alt='product' />
             </Link>
-            <div className='card-body'>
+            <div className='card-body-1'>
                 <Link to={`/product/${product._id}`}>
                     <h2>{product.name}</h2>
                 </Link>
