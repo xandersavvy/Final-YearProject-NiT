@@ -15,7 +15,9 @@ import { FaBackward } from 'react-icons/fa'
 const formElements = [
   ["User Id","userId","text"],
   ["Name","name","text"],
-  ["Email Id","email","email"]
+  ["Email Id","email","email"],
+  ["Enter password","password","password"],
+  ["Confirm password","cnfrmPassword","password"]
 ]
 
 export  const SignUpForm = () => {
@@ -40,7 +42,7 @@ export  const SignUpForm = () => {
             textAlign="center"
             color="teal.500"
           >
-              Sign Up Form
+              Register
           </Heading>
                <FormControl >
                   {formElements.map((formElement,key) => (
@@ -59,7 +61,7 @@ export  const SignUpForm = () => {
               color={'gray.500'}
               textAlign='center'
             >
-              Site is Under construction
+              {/* Site is Under construction */}
             </Text>
             <Stack
             spacing={4} direction='row' align='center' padding="4"
@@ -67,8 +69,9 @@ export  const SignUpForm = () => {
             <Button 
               colorScheme="teal"
               type="submit"
-              isLoading={true}
+              // isLoading={true}
             >
+              Sign Up
             </Button>
             <StackDivider />
             <Button 
