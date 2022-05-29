@@ -23,7 +23,7 @@ const modalStyle = {
         <Modal isOpen={isOpen} onClose={onClose}>
           <ModalOverlay />
           <ModalContent>
-            <ModalHeader>Add Employee Name</ModalHeader>
+            <ModalHeader>Add </ModalHeader>
             <ModalCloseButton />
             <ModalBody>
             {props.childComponent}

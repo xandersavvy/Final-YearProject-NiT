@@ -11,7 +11,7 @@ import Cookies from 'js-cookie';
 
 
 const login = (email:String,password:String) => {
-    if(email === "xandersavy@gmail.com" && password === "1234"){
+    if(email === "demo@gmail.com" && password === "7890"){
         if(Cookies) Cookies.set("token", "souvik");
         router.push("/product");
     }else{

@@ -1,7 +1,7 @@
 const {asyncError} = require('../middleware/error');
 const Dealer = require("../models/dealerModels");
 const ApiFeatures = require('../utils/apiFeatures');
-
+const ErrorHandler = require('../utils/errorHandler')
 
 
 exports.createDealer = asyncError( async (req, res, next) => {
@@ -22,7 +22,7 @@ exports.createDealer = asyncError( async (req, res, next) => {
 
 exports.getAllDealers = asyncError(async (req, res, next) => {
     const dealers = await Dealer.find();
-    if (!dealers) ErrorHandler("Dealers not found", 404);
+    if (!dealers) new ErrorHandler("Dealers not found", 404);
 
     res.status(200).json({
         success: true,
@@ -33,7 +33,7 @@ exports.getAllDealers = asyncError(async (req, res, next) => {
 
 exports.deleteDealer = asyncError(async (req, res, next) => {
     const dealer = await Dealer.findByIdAndDelete(req.params.id);
-    if (!dealer) ErrorHandler("Dealer not found", 404);
+    if (!dealer) new ErrorHandler("Dealer not found", 404);
 
     res.status(200).json({
         success: true,
@@ -46,7 +46,7 @@ exports.updateDealer = asyncError(async (req, res, next) => {
         new: true,
         runValidators: true
     });
-    if (!dealer) ErrorHandler("Dealer not found", 404);
+    if (!dealer) new ErrorHandler("Dealer not found", 404);
 
     res.status(200).json({
         success: true,
@@ -57,7 +57,7 @@ exports.updateDealer = asyncError(async (req, res, next) => {
 
 exports.getSingleDealer = asyncError(async (req, res, next) => {
     const dealer = await Dealer.findById(req.params.id);
-    if (!dealer) ErrorHandler("Dealer not found", 404);
+    if (!dealer) new ErrorHandler("Dealer not found", 404);
 
     res.status(200).json({
         success: true,

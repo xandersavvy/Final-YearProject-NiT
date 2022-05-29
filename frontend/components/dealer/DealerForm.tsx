@@ -40,7 +40,9 @@ const DealerForm = () => {
     setIsSubmitting(true);
     const res = await axios.post(BASE_URL_DEALER,formData,{withCredentials:true}).then(res => {
       console.log(res);
-      setIsSubmitting(false);}).catch(err => {
+      setIsSubmitting(false);
+      location.reload();
+    }).catch(err => {
         console.log(err);
         setIsSubmitting(false);
       });
